@@ -1,4 +1,12 @@
 <?php
+	
+	$host=isset($_POST['host']) ? $_POST['host'] : "58.210.119.62";
+	$port=isset($_POST['port']) ? $_POST['port'] : "51127";
+	
+	$isLinearMotion=isset($_POST['chkLinearMotion']) ? "1" : "0";
+	$isRotMotion=isset($_POST['chkRotMotion']) ? "1" : "0";
+	$isDAQ2005=isset($_POST['chkDAQ2005']) ? "1" : "0";
+	
 	//保留表单数据
 	$L_delayTime=isset($_POST['L_delayTime']) ? $_POST['L_delayTime'] : "1";
 	$L_accTime=isset($_POST['L_accTime']) ? $_POST['L_accTime'] : "0.1";
@@ -16,19 +24,35 @@
 	$expConditions=isset($_POST['expConditions']) ? $_POST['expConditions'] : "";	
 	$fileToSave = isset($_POST['fileToSave']) ? $_POST['fileToSave'] : "ADLINKDaq";
 	
-	$host = '58.210.119.62';
-	$port = '5112';
-	$message = 'Hello~~~';
+	$message = 
+	"isLinearMotion:" . $isLinearMotion . "," .
+	"L_delayTime:" . $L_delayTime . "," .
+	"L_accTime:" . $L_accTime . "," .
+	"L_decTime:" . $L_decTime . "," .
+	"L_maxSpeed:" . $L_maxSpeed . "," .
+	"L_unifTime:" . $L_unifTime . "," .
+	"isRotMotion:" . $isRotMotion . "," .
+	"R_delayTime:" . $R_delayTime . "," .
+	"R_accTime:" . $R_accTime . "," .
+	"R_decTime:" . $R_decTime . "," .
+	"R_maxSpeed:" . $R_maxSpeed . "," .
+	"R_dist:" . $R_dist . "," .
+	"isDAQ2005:" . $isDAQ2005 . "," .
+	"sanIntervals:" . $sanIntervals . "," .
+	"dataSize:" . $dataSize . "," .
+	"numOfAve:" . $numOfAve . "," .
+	"expConditions:" . $expConditions . "," .
+	"fileToSave:" . $fileToSave;
 	
 	if ($_POST['btn']=="Start")
 	{
 		$ret = send_tcp_message($host, $port, $message);
-		start();
+		//start();
 	}
 	
 	if ($_POST['btn']=="Stop")
 	{
-		stop();
+		echo $message ."\n\r";
 	}
 	
 	function start()
@@ -40,24 +64,28 @@
 	function send_tcp_message($host, $port, $message)
 	{
 		$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-		@socket_connect($socket, $host, $port);
+		$con=socket_connect($socket, $host, $port);
+		if(!$con){socket_close($socket);exit;}
 		
 		$num = 0;
 		$length = strlen($message);
 		do
 		{
 			$buffer = substr($message, $num);
-			$ret = @socket_write($socket, $buffer);
+			$ret = socket_write($socket, $buffer);
+			echo "sent data:" . $buffer . "OK!\n";
 			$num += $ret;
 		} while ($num < $length);
-		
-		$ret = '';
-		do
+		/*
+			$ret = '';
+			do
 		{
-			$buffer = @socket_read($socket, 1024, PHP_BINARY_READ);
-			$ret .= $buffer;
+		$buffer = socket_read($socket, 1024, PHP_NORMAL_READ);
+		echo "sent to server: hello\n response from server was:" . $buffer . "\n";
+		$ret .= $buffer;
 		} while (strlen($buffer) == 1024);
-		
+		*/
+		socket_shutdown($socket);
 		socket_close($socket);
 		
 		return $ret;
@@ -78,6 +106,24 @@
 	
 	<body>
 		<form method="post" autocomplete="on">
+			
+			<div id="HostIpConfig">			
+				<fieldset style="width:400px">
+					<legend>LinearMotion</legend>
+					<table border="0">
+						
+						<tr>
+							<td>HostIp:</td>
+							<td><input name="host" value="<?php echo $host;?>"/></td>
+						</tr>
+						<tr>
+							<td>Port:</td>
+							<td><input name="port"  value="<?php echo $port;?>"/></td>
+						</tr>
+					</table>
+				</fieldset>				
+			</div>
+			
 			<div id="PCI8158">
 				
 				<div id="LinearMotion">
@@ -129,78 +175,79 @@
 								<th colspan="2"><input type="checkbox" name="chkRotMotion">RotationMotion</th>
 							</tr>
 							
-							<tr>
-								<td>Delay Time(s):</td>
-								<td><input type="text" name="R_delayTime" value="<?php echo $R_delayTime;?>"/></td>
-							</tr>
-							<tr>
-								<td>Acc Time(s):</td>
-								<td><input name="R_accTime" value="<?php echo $R_accTime;?>"/></td>
-							</tr>
-							<tr>
-								<td>Dec Time(s):</td>
-								<td><input name="R_decTime" value="<?php echo $R_decTime;?>"/></td>
-							</tr>
-							<tr>
-								<td>Max Speed(deg/s):</td>
-								<td><input name="R_maxSpeed" value="<?php echo $R_maxSpeed;?>"/></td>
-							</tr>
-							<tr>
-								<td>Distance(deg):</td>
-								<td><input name="R_dist" value="<?php echo $R_dist;?>"/></td>
-							</tr>
-							<tr>
-								<td>Current Speed(deg/s):</td>
-								<td><input name="R_curSpeed" placeholder="ADLINK feedback"/></td>
-							</tr>
-						</table>
-					</fieldset>
-					
-				</div>
-			</div>
-			<div id="DAQ2005">
-				
-				<fieldset style="width:400px">
-					<legend>LinearMotion</legend>
-					<table border="0">
 						<tr>
-							<th colspan="2"><input type="checkbox" name="chkDAQ2005">DAQ2005 Enable</th>
+						<td>Delay Time(s):</td>
+						<td><input type="text" name="R_delayTime" value="<?php echo $R_delayTime;?>"/></td>
+						</tr>
+						<tr>
+						<td>Acc Time(s):</td>
+						<td><input name="R_accTime" value="<?php echo $R_accTime;?>"/></td>
+						</tr>
+						<tr>
+						<td>Dec Time(s):</td>
+						<td><input name="R_decTime" value="<?php echo $R_decTime;?>"/></td>
+						</tr>
+						<tr>
+						<td>Max Speed(deg/s):</td>
+						<td><input name="R_maxSpeed" value="<?php echo $R_maxSpeed;?>"/></td>
+						</tr>
+						<tr>
+						<td>Distance(deg):</td>
+						<td><input name="R_dist" value="<?php echo $R_dist;?>"/></td>
+						</tr>
+						<tr>
+						<td>Current Speed(deg/s):</td>
+						<td><input name="R_curSpeed" placeholder="ADLINK feedback"/></td>
+						</tr>
+						</table>
+						</fieldset>
+						
+						</div>
+						</div>
+						<div id="DAQ2005">
+						
+						<fieldset style="width:400px">
+						<legend>LinearMotion</legend>
+						<table border="0">
+						<tr>
+						<th colspan="2"><input type="checkbox" name="chkDAQ2005">DAQ2005 Enable</th>
 						</tr>
 						
 						<tr>
-							<td>Scan Intervals:</td>
-							<td><input type="text" name="sanIntervals" value="<?php echo $sanIntervals;?>"/></td>
+						<td>Scan Intervals:</td>
+						<td><input type="text" name="sanIntervals" value="<?php echo $sanIntervals;?>"/></td>
 						</tr>	
 						<tr>
-							<td>Data Size:</td>
-							<td><input name="dataSize" value="<?php echo $dataSize;?>"/></td>
+						<td>Data Size:</td>
+						<td><input name="dataSize" value="<?php echo $dataSize;?>"/></td>
 						</tr>
 						<tr>
-							<td>Num of Ave::</td>
-							<td><input name="numOfAve" value="<?php echo $numOfAve;?>"/></td>
+						<td>Num of Ave::</td>
+						<td><input name="numOfAve" value="<?php echo $numOfAve;?>"/></td>
 						</tr>
 						<tr>
-							<td>Exp conditions:</td>
-							<td><textarea name="expConditions" value="<?php echo $expConditions;?> rows="4" cols="21" placeholder="Enperimental conditions content will paste in excel file at cell ('W1')" ></textarea></td>
+						<td>Exp conditions:</td>
+						<td><textarea name="expConditions" value="<?php echo $expConditions;?> rows="4" cols="21" placeholder="Enperimental conditions content will paste in excel file at cell ('W1')" ></textarea></td>
 						</tr>
 						<tr>
-							<td>File to Save:</td>
-							<td><input name="fileToSave" value="<?php echo $fileToSave;?>" /></td>
+						<td>File to Save:</td>
+						<td><input name="fileToSave" value="<?php echo $fileToSave;?>" /></td>
 						</tr>
-					</table>
-				</fieldset>
-				
-			</div>
-			
-			<div id="button">
-				
-				<input type="submit" name="btn" value="Start">
-				<input type="submit" name="btn" value="Stop">
-				
-				
-			</div>
-		</form>
-	</body>		
-</html>
-
-
+						</table>
+						</fieldset>
+						
+						</div>
+						
+						<div id="button">
+						
+						<input type="submit" name="btn" value="Start">
+						<input type="submit" name="btn" value="Stop">
+						
+						
+						</div>
+						</form>
+						</body>		
+						</html>
+						
+						
+												
