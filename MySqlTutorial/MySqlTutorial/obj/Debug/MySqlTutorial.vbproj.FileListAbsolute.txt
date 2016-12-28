@@ -1,0 +1,12 @@
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\bin\Debug\MySqlTutorial.exe
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\bin\Debug\MySqlTutorial.pdb
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\bin\Debug\MySqlTutorial.xml
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\bin\Debug\MySql.Data.dll
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\bin\Debug\MySql.Data.xml
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.vbprojResolveAssemblyReference.cache
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.Form1.resources
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.Resources.resources
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.vbproj.GenerateResource.Cache
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.exe
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.xml
+c:\users\hard\documents\visual studio 2015\Projects\MySqlTutorial\MySqlTutorial\obj\Debug\MySqlTutorial.pdb
