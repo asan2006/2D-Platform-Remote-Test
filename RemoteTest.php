@@ -79,11 +79,11 @@
 		/*
 			$ret = '';
 			do
-		{
-		$buffer = socket_read($socket, 1024, PHP_NORMAL_READ);
-		echo "sent to server: hello\n response from server was:" . $buffer . "\n";
-		$ret .= $buffer;
-		} while (strlen($buffer) == 1024);
+			{
+			$buffer = socket_read($socket, 1024, PHP_NORMAL_READ);
+			echo "sent to server: hello\n response from server was:" . $buffer . "\n";
+			$ret .= $buffer;
+			} while (strlen($buffer) == 1024);
 		*/
 		socket_shutdown($socket);
 		socket_close($socket);
@@ -97,7 +97,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<META CHARSET="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+		
 		<title>2D Platform Remote Test</title>
 		<style type="text/css">
 			
@@ -175,79 +178,94 @@
 								<th colspan="2"><input type="checkbox" name="chkRotMotion">RotationMotion</th>
 							</tr>
 							
-						<tr>
-						<td>Delay Time(s):</td>
-						<td><input type="text" name="R_delayTime" value="<?php echo $R_delayTime;?>"/></td>
-						</tr>
-						<tr>
-						<td>Acc Time(s):</td>
-						<td><input name="R_accTime" value="<?php echo $R_accTime;?>"/></td>
-						</tr>
-						<tr>
-						<td>Dec Time(s):</td>
-						<td><input name="R_decTime" value="<?php echo $R_decTime;?>"/></td>
-						</tr>
-						<tr>
-						<td>Max Speed(deg/s):</td>
-						<td><input name="R_maxSpeed" value="<?php echo $R_maxSpeed;?>"/></td>
-						</tr>
-						<tr>
-						<td>Distance(deg):</td>
-						<td><input name="R_dist" value="<?php echo $R_dist;?>"/></td>
-						</tr>
-						<tr>
-						<td>Current Speed(deg/s):</td>
-						<td><input name="R_curSpeed" placeholder="ADLINK feedback"/></td>
-						</tr>
+							<tr>
+								<td>Delay Time(s):</td>
+								<td><input type="text" name="R_delayTime" value="<?php echo $R_delayTime;?>"/></td>
+							</tr>
+							<tr>
+								<td>Acc Time(s):</td>
+								<td><input name="R_accTime" value="<?php echo $R_accTime;?>"/></td>
+							</tr>
+							<tr>
+								<td>Dec Time(s):</td>
+								<td><input name="R_decTime" value="<?php echo $R_decTime;?>"/></td>
+							</tr>
+							<tr>
+								<td>Max Speed(deg/s):</td>
+								<td><input name="R_maxSpeed" value="<?php echo $R_maxSpeed;?>"/></td>
+							</tr>
+							<tr>
+								<td>Distance(deg):</td>
+								<td><input name="R_dist" value="<?php echo $R_dist;?>"/></td>
+							</tr>
+							<tr>
+								<td>Current Speed(deg/s):</td>
+								<td><input name="R_curSpeed" placeholder="ADLINK feedback"/></td>
+							</tr>
 						</table>
-						</fieldset>
-						
-						</div>
-						</div>
-						<div id="DAQ2005">
-						
-						<fieldset style="width:400px">
-						<legend>LinearMotion</legend>
-						<table border="0">
+					</fieldset>
+					
+				</div>
+			</div>
+			<div id="DAQ2005">
+				
+				<fieldset style="width:400px">
+					<legend>LinearMotion</legend>
+					<table border="0">
 						<tr>
-						<th colspan="2"><input type="checkbox" name="chkDAQ2005">DAQ2005 Enable</th>
+							<th colspan="2"><input type="checkbox" name="chkDAQ2005">DAQ2005 Enable</th>
 						</tr>
 						
 						<tr>
-						<td>Scan Intervals:</td>
-						<td><input type="text" name="sanIntervals" value="<?php echo $sanIntervals;?>"/></td>
+							<td>Scan Intervals:</td>
+							<td><input type="text" name="sanIntervals" value="<?php echo $sanIntervals;?>"/></td>
 						</tr>	
 						<tr>
-						<td>Data Size:</td>
-						<td><input name="dataSize" value="<?php echo $dataSize;?>"/></td>
+							<td>Data Size:</td>
+							<td><input name="dataSize" value="<?php echo $dataSize;?>"/></td>
 						</tr>
 						<tr>
-						<td>Num of Ave::</td>
-						<td><input name="numOfAve" value="<?php echo $numOfAve;?>"/></td>
+							<td>Num of Ave::</td>
+							<td><input name="numOfAve" value="<?php echo $numOfAve;?>"/></td>
 						</tr>
 						<tr>
-						<td>Exp conditions:</td>
-						<td><textarea name="expConditions" value="<?php echo $expConditions;?> rows="4" cols="21" placeholder="Enperimental conditions content will paste in excel file at cell ('W1')" ></textarea></td>
+							<td>Exp conditions:</td>
+							<td><textarea name="expConditions" value="<?php echo $expConditions;?> rows="4" cols="21" placeholder="Enperimental conditions content will paste in excel file at cell ('W1')" ></textarea></td>
 						</tr>
 						<tr>
-						<td>File to Save:</td>
-						<td><input name="fileToSave" value="<?php echo $fileToSave;?>" /></td>
+							<td>File to Save:</td>
+							<td><input name="fileToSave" value="<?php echo $fileToSave;?>" /></td>
 						</tr>
-						</table>
-						</fieldset>
-						
-						</div>
-						
-						<div id="button">
-						
-						<input type="submit" name="btn" value="Start">
-						<input type="submit" name="btn" value="Stop">
-						
-						
-						</div>
-						</form>
-						</body>		
-						</html>
-						
-						
-												
+					</table>
+				</fieldset>
+				
+			</div>
+			
+			<div id="button">
+				
+				<input type="submit" name="btn" value="Start">
+				<input type="submit" name="btn" value="Stop">
+				
+				
+			</div>
+		</form>
+		
+		<div id="id_video_container" style="width:100%; height:auto;"></div>
+		<script src="//qzonestyle.gtimg.cn/open/qcloud/video/live/h5/live_connect.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function () {
+				var option = {
+					"live_url" : "http://6375.liveplay.myqcloud.com/live/6375_d3a1d90050.m3u8",
+					"live_url2" : "http://6375.liveplay.myqcloud.com/live/6375_d3a1d90050.flv",
+					"width" : 480,
+					"height" : 320
+					
+				};
+				
+				var player = new qcVideo.Player("id_video_container", option);
+			})()
+		</script>
+	</body>		
+</html>
+
+
