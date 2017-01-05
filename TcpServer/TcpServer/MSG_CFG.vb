@@ -70,11 +70,16 @@
 
     Public ReadOnly Property info As String
         Get
-            Dim sb As New System.Text.StringBuilder
-            For Each s As String In strData
-                sb.AppendLine(s)
-            Next
-            Return sb.ToString
+            '暂停信号
+            If isLinearMotion = False And isRotMotion = False Then
+                Return "STOP"
+            Else
+                Dim sb As New System.Text.StringBuilder
+                For Each s As String In strData
+                    sb.AppendLine(s)
+                Next
+                Return sb.ToString
+            End If
         End Get
     End Property
 

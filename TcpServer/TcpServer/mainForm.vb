@@ -102,7 +102,11 @@ Public Class mainForm
         Dim MSG As New MSG_CFG(Encoding.ASCII.GetString(bytes))
         UpdateTxtReceive(Now.ToString)
         UpdateTxtReceive(MSG.info)
-        Control_2DPlatform(MSG)
+        If MSG.info = "STOP" Then
+            Stop_2DPlatform()
+        Else
+            Control_2DPlatform(MSG)
+        End If
         '继续监听客户端连接
         tcpClientConnected.Set()
         ' Signal the calling thread to continue.
