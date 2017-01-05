@@ -44,22 +44,39 @@
 	"expConditions:" . $expConditions . "," .
 	"fileToSave:" . $fileToSave;
 	
+	$message_stop = 
+	"isLinearMotion:" . "0" . "," .
+	"L_delayTime:" . $L_delayTime . "," .
+	"L_accTime:" . $L_accTime . "," .
+	"L_decTime:" . $L_decTime . "," .
+	"L_maxSpeed:" . $L_maxSpeed . "," .
+	"L_unifTime:" . $L_unifTime . "," .
+	"isRotMotion:" . "0" . "," .
+	"R_delayTime:" . $R_delayTime . "," .
+	"R_accTime:" . $R_accTime . "," .
+	"R_decTime:" . $R_decTime . "," .
+	"R_maxSpeed:" . $R_maxSpeed . "," .
+	"R_dist:" . $R_dist . "," .
+	"isDAQ2005:" . "0" . "," .
+	"scanIntervals:" . $scanIntervals . "," .
+	"dataSize:" . $dataSize . "," .
+	"numOfAve:" . $numOfAve . "," .
+	"expConditions:" . $expConditions . "," .
+	"fileToSave:" . $fileToSave;
+	
 	if ($_POST['btn']=="Start")
 	{
 		$ret = send_tcp_message($host, $port, $message);
-		//start();
+		echo "start motion!\n";
 	}
 	
 	if ($_POST['btn']=="Stop")
 	{
-		echo $message ."\n\r";
+		$ret = send_tcp_message($host, $port, $message_stop);
+		//echo $message_stop ."\n\r";
+		echo "stop motion!\n";
 	}
 	
-	function start()
-	{
-		echo isset($_POST['expConditions']);
-	}
-	function stop() {echo "stop";}
 	
 	function send_tcp_message($host, $port, $message)
 	{
@@ -73,7 +90,7 @@
 		{
 			$buffer = substr($message, $num);
 			$ret = socket_write($socket, $buffer);
-			echo "sent data:" . $buffer . "OK!\n";
+			echo "sent message OK!\n";
 			$num += $ret;
 		} while ($num < $length);
 		/*
@@ -267,8 +284,9 @@
 				var player = new qcVideo.Player("id_video_container", option);
 			})()
 		</script>
-		
+	
 	</body>		
-</html>
-
-
+	</html>
+	
+	
+		
