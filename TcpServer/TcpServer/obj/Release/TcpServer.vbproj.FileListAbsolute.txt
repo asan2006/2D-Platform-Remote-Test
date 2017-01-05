@@ -1,0 +1,11 @@
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.exe.config
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.exe
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.pdb
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.xml
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.vbprojResolveAssemblyReference.cache
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.mainForm.resources
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.Resources.resources
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.vbproj.GenerateResource.Cache
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.exe
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.xml
+C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.pdb
