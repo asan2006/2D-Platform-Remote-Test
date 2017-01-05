@@ -11,3 +11,15 @@ C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.xml
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.pdb
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.testForm.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Debug\TcpServer.exe.config
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Debug\TcpServer.exe
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Debug\TcpServer.pdb
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Debug\TcpServer.xml
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.vbprojResolveAssemblyReference.cache
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.mainForm.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.Resources.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.testForm.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.vbproj.GenerateResource.Cache
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.exe
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.xml
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Debug\TcpServer.pdb

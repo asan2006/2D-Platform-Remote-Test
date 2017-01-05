@@ -24,6 +24,11 @@ Public Class mainForm
             End If
         Next
         cboIpList.SelectedIndex = 0
+
+        'intial 8158 and 2005 card
+        initial_PCI8158()
+        initial_DAQ2005()
+
     End Sub
 
     Private Sub btnListen_Click(sender As Object, e As EventArgs) Handles btnListen.Click
@@ -97,7 +102,7 @@ Public Class mainForm
         Dim MSG As New MSG_CFG(Encoding.ASCII.GetString(bytes))
         UpdateTxtReceive(Now.ToString)
         UpdateTxtReceive(MSG.info)
-
+        Control_2DPlatform(MSG)
         '继续监听客户端连接
         tcpClientConnected.Set()
         ' Signal the calling thread to continue.
@@ -110,5 +115,9 @@ Public Class mainForm
         Else
             txtReceive.AppendText(str + vbCrLf)
         End If
+    End Sub
+
+    Private Sub mainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Release_2DPlatform()
     End Sub
 End Class

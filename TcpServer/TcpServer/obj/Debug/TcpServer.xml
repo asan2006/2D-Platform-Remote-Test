@@ -6,6 +6,52 @@ TcpServer
 </name>
 </assembly>
 <members>
+<member name="M:TcpServer.Module_2DPlatform.Stop_2DPlatform">
+ <summary>
+ 暂停运动
+ </summary>
+</member>
+<member name="M:TcpServer.Module_2DPlatform.Release_2DPlatform">
+ <summary>
+ 释放资源
+ </summary>
+</member>
+<member name="F:TcpServer.Module_Daq2005PostTrgNoneDlbBufAsynContAI.InBuf">
+ <summary>
+ Post Trigger Mode Non-double-buffered Asynchronous Continuous Analog Input Programming
+ </summary>
+ <remarks></remarks>
+ 
+</member>
+<member name="M:TcpServer.Module_Daq2005PostTrgNoneDlbBufAsynContAI.initial_DAQ2005">
+ <summary>
+ initial DAQ2005 card
+ </summary>
+</member>
+<member name="M:TcpServer.Module_OtherFun.dataToXLSX(System.String[],System.UInt16[],System.Int32,System.String,System.String,System.String)">
+ <summary>
+ import data from memory to xlsx file
+ </summary>
+ <param name="xlsHeader">xlsHeader length is 4 and refer the four AD channel</param>
+ <param name="dataBuf">InBuf as in daq2005 from D2K_AI_ContBufferSetup function</param>
+ <param name="aveNum">aveNum is use for calc average filter</param>
+ <param name="experimentalCondition"></param>
+ <param name="filename">select xlsx file to store data</param>
+ <remarks></remarks>
+ 
+</member>
+<member name="M:TcpServer.Module_Pci8158TrMoveFor2Axis.initial_PCI8158">
+ <summary>
+ initial 8158 card
+ </summary>
+</member>
+<member name="M:TcpServer.Module_Pci8158TrMoveFor2Axis.Start_2Axis_tr_move(System.Int16,System.Double[],System.Double[],System.Double[],System.Double[],System.Double[])">
+ <summary>
+ only for e-teknet 2D platform motion control
+ </summary>
+ <remarks></remarks>
+ 
+</member>
 <member name="T:TcpServer.My.Resources.Resources">
 <summary>
   A strongly-typed resource class, for looking up localized strings, etc.

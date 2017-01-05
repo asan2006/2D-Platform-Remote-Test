@@ -14,9 +14,9 @@
     Public ReadOnly R_maxSpeed As Double
     Public ReadOnly R_dist As Double
     Public ReadOnly isDAQ2005 As Boolean
-    Public ReadOnly scanIntervals As Double
-    Public ReadOnly dataSize As Double
-    Public ReadOnly numOfAve As Double
+    Public ReadOnly scanIntervals As Integer
+    Public ReadOnly dataSize As Integer
+    Public ReadOnly numOfAve As Integer
     Public ReadOnly expConditions As String
     Public ReadOnly fileToSave As String
 
@@ -53,11 +53,11 @@
                 Case "isDAQ2005"
                     isDAQ2005 = CBool(r(1))
                 Case "scanIntervals"
-                    scanIntervals = CDbl(r(1))
+                    scanIntervals = CInt(r(1))
                 Case "dataSize"
-                    dataSize = CDbl(r(1))
+                    dataSize = CInt(r(1))
                 Case "numOfAve"
-                    numOfAve = CDbl(r(1))
+                    numOfAve = CInt(r(1))
                 Case "expConditions"
                     expConditions = CStr(r(1))
                 Case "fileToSave"
