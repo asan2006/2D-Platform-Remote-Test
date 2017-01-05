@@ -84,6 +84,7 @@ Partial Class mainForm
         Me.txtReceive.Location = New System.Drawing.Point(0, 57)
         Me.txtReceive.Multiline = True
         Me.txtReceive.Name = "txtReceive"
+        Me.txtReceive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtReceive.Size = New System.Drawing.Size(519, 396)
         Me.txtReceive.TabIndex = 4
         '

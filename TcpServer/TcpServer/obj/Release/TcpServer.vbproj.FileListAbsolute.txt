@@ -9,3 +9,14 @@ C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.exe
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.xml
 C:\Users\bin__\Documents\GitHub\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.pdb
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.exe.config
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.exe
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.pdb
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\bin\Release\TcpServer.xml
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.mainForm.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.Resources.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.testForm.resources
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.vbproj.GenerateResource.Cache
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.exe
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.xml
+C:\Users\yanfa\Source\Repos\2D-Platform-Remote-Test\TcpServer\TcpServer\obj\Release\TcpServer.pdb
