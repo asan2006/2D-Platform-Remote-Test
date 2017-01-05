@@ -20,7 +20,6 @@
     Public ReadOnly expConditions As String
     Public ReadOnly fileToSave As String
 
-
     Sub New(str As String)
         strMSG = str
         strData = strMSG.Split(",")
@@ -69,5 +68,14 @@
         Next
     End Sub
 
+    Public ReadOnly Property info As String
+        Get
+            Dim sb As New System.Text.StringBuilder
+            For Each s As String In strData
+                sb.AppendLine(s)
+            Next
+            Return sb.ToString
+        End Get
+    End Property
 
 End Class

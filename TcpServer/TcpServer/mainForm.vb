@@ -92,11 +92,12 @@ Public Class mainForm
         ' server table, read data, etc.)
         Dim bytes(client.ReceiveBufferSize) As Byte
         client.GetStream.Read(bytes, 0, client.ReceiveBufferSize)
-        'client.GetStream.Close()
-        UpdateTxtReceive(Encoding.ASCII.GetString(bytes))
-        'Dim strResult As String = Encoding.ASCII.GetString(bytes)
 
-        'txtReceive.AppendText(strResult)
+        '更新收到的信息
+        Dim MSG As New MSG_CFG(Encoding.ASCII.GetString(bytes))
+        UpdateTxtReceive(Now.ToString)
+        UpdateTxtReceive(MSG.info)
+
         '继续监听客户端连接
         tcpClientConnected.Set()
         ' Signal the calling thread to continue.
@@ -107,7 +108,7 @@ Public Class mainForm
             Dim d As New updateTxt(AddressOf UpdateTxtReceive)
             txtReceive.Invoke(d, New Object() {[str]})
         Else
-            txtReceive.AppendText(str)
+            txtReceive.AppendText(str + vbCrLf)
         End If
     End Sub
 End Class
